@@ -1,0 +1,22 @@
+FULL OUTER JOIN
+
+SELECT 
+    r.Name AS Resident_Name, 
+    w.Collection_Date, 
+    w.Type_of_Waste 
+FROM 
+    Residents6 r
+FULL OUTER JOIN 
+    Waste_Collection_Events6 w ON r.Resident_ID = w.Resident_ID;
+INNER JOIN
+
+SELECT 
+    w.Collection_ID, 
+    w.Collection_Date, 
+    w.Type_of_Waste, 
+    wt.Decomposition_Time, 
+    wt.Disposal_Method 
+FROM 
+    Waste_Collection_Events6 w
+INNER JOIN 
+    Waste_Types6 wt ON w.Type_of_Waste = wt.Category;
